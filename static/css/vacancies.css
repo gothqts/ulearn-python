@@ -1,0 +1,92 @@
+.api-title {
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.api-title a {
+    color: #17353F;
+}
+
+.cards {
+    padding: 0 70px;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0 auto;
+}
+
+.card {
+    width: 45%;
+    margin: 0 auto 30px;
+    border: 3px #17353F solid;
+    border-radius: 30px;
+    padding-left: 17px;
+}
+
+.name {
+    text-decoration: none;
+    margin-bottom: 0;
+}
+
+.name a {
+    text-decoration: none;
+    color: #17353F;
+}
+
+.card p {
+    font-size: 22px;
+    padding: 0;
+}
+
+p.salary {
+    margin: 0 0 15px;
+}
+
+p.company {
+    margin: 0 0 5px;
+}
+
+p.area_name {
+    margin: 0 0 20px;
+}
+
+p.description {
+    margin: 0 0 10px;
+}
+
+p.key_skills {
+    margin: 0 0 5px;
+}
+
+p.date {
+    font-size: 16px;
+    opacity: 0.9;
+    margin: 0 0 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.up-button {
+  position: fixed;
+  z-index: 1;
+  right: 5%;
+  top: 5%;
+  border: black solid 4px;
+  border-radius: 30px;
+}
+
+.up-button img {
+  padding: 5px;
+}
+
+.shown {
+  display: inline-block;
+}
+
+
+span {
+    text-decoration: underline;
+}

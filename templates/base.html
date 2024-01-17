@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}"/>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" content="no-cache">
+    {% block stylesheet %}{% endblock %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<header>
+    <h1 class="title">{{ vacancy_name }}</h1>
+</header>
+<div>
+    <input type="checkbox" id="hmt" class="hidden-menu-ticker">
+    <label class="btn-menu" for="hmt">
+        <img src="{% static 'img/burger.png' %}" width="60" height="60">
+    </label>
+    <ul class="hidden-menu">
+        <li class="menu-item"><img src="{% static 'img/monitor.png' %}" width="120" height="120"></li>
+        <li class="menu-item"><a class="nav-link" href="{% url 'index' %}">Главная</a></li>
+        <li class="menu-item"><a class="nav-link" href="{% url 'demand' %}">Востребованность</a></li>
+        <li class="menu-item"><a class="nav-link" href="{% url 'geography' %}">География</a></li>
+        <li class="menu-item"><a class="nav-link" href="{% url 'skills' %}">Навыки</a></li>
+        <li class="menu-item"><a class="nav-link" href="{% url 'vacancies' %}">Последние вакансии</a></li>
+    </ul>
+</div>
+{% block main %}
+{% endblock %}
+<footer>
+    <div class="footer">
+        <div class="row hover">
+            <a>КУРАМОВ ЛЕВ</a><br>
+            <a>©УрФУ ИРИТ-РТФ 2024</a><br>
+            <a>РИ-220945</a>
+        </div>
+    </div>
+</footer>
+{% block script %}
+{% endblock %}
+</body>
+</html>
