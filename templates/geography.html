@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/geography.css' %}" content="no-cache">
+{% endblock %}
+{% block title %}
+    География
+{% endblock %}
+{% block main %}
+    <main>
+        <h1 class="geography-title">Аналитика по городам</h1>
+        <p class="info">Какие города наиболее привлекательны для {{ vacancy_name }}?</p>
+        <div class="bars container hidden" style="display: flex; justify-content: center; flex-wrap: wrap">
+            <div>
+                <h2 class="container-title">Средняя зарплата по городам</h2>
+                <div id="avg_salary inner">
+                    <img src="" width="640" alt="График зарплат"/>
+                </div>
+            </div>
+            <div>
+                <h2 class="container-title">Средняя зарплата "{{ vacancy_name }}" по городам</h2>
+                <div id="avg_salary inner">
+                    <img src="" width="640" alt="Доли вакансий"/>
+                </div>
+            </div>
+            <div>
+                <h2 class="container-title">Доля всех вакансий по городам</h2>
+                <div id="city-share inner">
+                    <img src="" width="640" alt="График зарплат для должности"/>
+                </div>
+            </div>
+            <div>
+                <h2 class="container-title">Доля вакансий "{{ vacancy_name }}" по городам</h2>
+                <div id="avg_salary inner">
+                    <img src="" width="640" alt="Доли вакансий для должности"/>
+                </div>
+            </div>
+        </div>
+        <div class="tables container">
+            <div>
+                <h2 class="container-title">Данные по всем вакансиям</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Город</th>
+                        <th>Средняя зарплата</th>
+                        <th>Доля вакансий</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2 class="container-title">Данные по вакансии {{ vacancy_name }}</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Город</th>
+                        <th>Средняя зарплата</th>
+                        <th>Доля вакансий</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+{% block script %}
+{% endblock %}
