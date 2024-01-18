@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/skills.css' %}" content="no-cache">
+{% endblock %}
+{% block title %}
+    Навыки
+{% endblock %}
+{% block main %}
+    <main>
+        <h1 class="skills-title">ТОП-20 навыков по годам для вакансии "{{ vacancy_name }}"</h1>
+        <p class="info">Если вы собираетесь стать {{ vacancy_name }}, важно знать какие компетенции требуют
+            работодатели. Данная страница поможет вам отследить самые популярные навыки по годам для их дальнейшего
+            изучения.</p>
+        <div class="bars container">
+        </div>
+        <div>
+            <h2 class="container-title">Данные в табличном виде</h2>
+        </div>
+    </main>
+{% endblock %}
+{% block script %}
+{% endblock %}

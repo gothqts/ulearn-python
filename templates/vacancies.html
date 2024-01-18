@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vacancies.css' %}" content="no-cache">
+{% endblock %}
+{% block title %}
+    Последние вакансии
+{% endblock %}
+{% block main %}
+    <main>
+        <h1 class="api-title">Последние вакансии с <a href="https://hh.ru">hh.ru</a> за последние 24 часа</h1>
+        <ul class="cards">
+            
+        </ul>
+    </main>
+{% endblock %}
