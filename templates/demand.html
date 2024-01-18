@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/demand.css' %}" content="no-cache">
+{% endblock %}
+{% block title %}
+    Востребованность
+{% endblock %}
+{% block main %}
+    <main>
+        <h1 class="demand-title">Аналитика по зарплатам и количеству вакансий</h1>
+        <p class="info">Всегда важно знать, востребована ли профессия или нет? Данная страница поможет изучить динамику
+            средней зарплаты и количество ваканий по годам. Для наглядности на странице представлены как для
+            {{ vacancy_name }}, так и для всех вакансий.</p>
+        <div class="bars container">
+            <div class="bar">
+                <h2 class="container-title">Средняя зарплата по годам</h2>
+                <div id="avg_salary">
+                    <img src="" width="640" alt="График зарплат"/>
+                </div>
+            </div>
+            <div class="bar">
+                <h2 class="container-title">Количество вакансий по годам</h2>
+                <div id="amount">
+                    <img src="" width="640" alt="График вакансий"/>
+                </div>
+            </div>
+            <div class="bar">
+                <h2 class="container-title">Средняя зарплата "{{ vacancy_name }}"</h2>
+                <div id="vacancy_avg_sal">
+                    <img src="" width="640" alt="График зарплат для должности"/>
+                </div>
+            </div>
+            <div class="bar">
+                <h2 class="container-title">Количество вакансий "{{ vacancy_name }}"</h2>
+                <div id="vacancy_amount">
+                    <img src="" width="640" alt="График вакансий для должности"/>
+                </div>
+            </div>
+        </div>
+        <div class="tables container">
+            <div>
+                <h2 class="container-title">Данные по вакансии "{{ vacancy_name }}"</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Год</th>
+                        <th>Средняя зарплата</th>
+                        <th>Количество вакансий</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2 class="container-title">Данные по всем вакансиям</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Год</th>
+                        <th>Количество вакансий</th>
+                        <th>Количество вакансий - "{{ vacancy_name }}"</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+{% block script %}
+{% endblock %}
