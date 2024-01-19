@@ -10,7 +10,17 @@
     <main>
         <h1 class="api-title">Последние вакансии с <a href="https://hh.ru">hh.ru</a> за последние 24 часа</h1>
         <ul class="cards">
-            
+            {% for vacancy in vacancies %}
+            <li class="card">
+                <h2 class="name">{{ vacancy.name }}</h2>
+                <p class="salary"><span>Зарплата:</span> {{ vacancy.salary.str }}</p>
+                <p class="company"><span>Компания:</span> {{ vacancy.company }}</p>
+                <p class="area_name"><span>Город:</span> {{ vacancy.area_name }}</p>
+                <p class="description">{{ vacancy.description }}</p>
+                <p class="key_skills">{{ vacancy.key_skills }}</p>
+                <p class="date"><span>Вакансия опубликована в {{ vacancy.published_at }}</span></p>
+            </li>
+            {% endfor %}
         </ul>
     </main>
 {% endblock %}

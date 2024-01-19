@@ -14,25 +14,25 @@
             <div>
                 <h2 class="container-title">Средняя зарплата по городам</h2>
                 <div id="avg_salary inner">
-                    <img src="" width="640" alt="График зарплат"/>
+                    <img src="{{ salary_png.url }}" width="640" alt="График зарплат"/>
                 </div>
             </div>
             <div>
                 <h2 class="container-title">Средняя зарплата "{{ vacancy_name }}" по городам</h2>
                 <div id="avg_salary inner">
-                    <img src="" width="640" alt="Доли вакансий"/>
+                    <img src="{{ geography_graph.position_salary.url }}" width="640" alt="Доли вакансий"/>
                 </div>
             </div>
             <div>
                 <h2 class="container-title">Доля всех вакансий по городам</h2>
                 <div id="city-share inner">
-                    <img src="" width="640" alt="График зарплат для должности"/>
+                    <img src="{{ geography_graph.position_share.url }}" width="640" alt="График зарплат для должности"/>
                 </div>
             </div>
             <div>
                 <h2 class="container-title">Доля вакансий "{{ vacancy_name }}" по городам</h2>
                 <div id="avg_salary inner">
-                    <img src="" width="640" alt="Доли вакансий для должности"/>
+                    <img src="{{ geography_graph.percentage.url }}" width="640" alt="Доли вакансий для должности"/>
                 </div>
             </div>
         </div>
@@ -48,6 +48,13 @@
                     </tr>
                     </thead>
                     <tbody>
+                    {% for obj in city_statistic %}
+                        <tr>
+                            <th>{{ obj.city }}</th>
+                            <th>{{ obj.salary }}</th>
+                            <th>{{ obj.vacancy_percentage }}</th>
+                        </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -62,6 +69,13 @@
                     </tr>
                     </thead>
                     <tbody>
+                    {% for obj in position_city_stats %}
+                        <tr>
+                            <th>{{ obj.city }}</th>
+                            <th>{{ obj.salary }}</th>
+                            <th>{{ obj.vacancy_percentage }}</th>
+                        </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>

@@ -13,9 +13,69 @@
             работодатели. Данная страница поможет вам отследить самые популярные навыки по годам для их дальнейшего
             изучения.</p>
         <div class="bars container">
+            {% for graph in graphs %}
+                <div>
+                    <h2 class="container-title">График по навыкам за {{ graph.year }}</h2>
+                    <div class="bars-section">
+                        <div class="bar-div">
+                            <h2 class="section-title">По всем вакансиям</h2>
+                            <img src="{{ graph.common_graph.url }}" width="640"
+                                 alt="График по навыкам за {{ graph.year }} год"/>
+                        </div>
+                        <div class="bar-div">
+                            <h2 class="section-title">По вакансии {{ vacancy_name }}</h2>
+                            <img src="{{ graph.position_graph.url }}" width="640"
+                                 alt="График по вакансии за {{ graph.year }} год"/>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
         <div>
             <h2 class="container-title">Данные в табличном виде</h2>
+            {% for data in year_skill_stats %}
+                <div>
+                    <h3 class="h3-title h3-underline">Данные за {{ data.year }} год</h3>
+                    <div class="table-container">
+                        <div>
+                            <h3 class="h3-title">Данные по всем вакансиям</h3>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Навык</th>
+                                    <th>Количество упоминаний</th>
+                                </tr>
+                                </thead>
+                                {% for data in data.common_data %}
+                                    <tr>
+                                        <th>{{ data.skill_name }}</th>
+                                        <th>{{ data.notification_amount }}</th>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                        <div>
+                            <h3 class="h3-title">Данные по вакансии {{ vacancy_name }}</h3>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Навык</th>
+                                    <th>Количество упоминаний</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for data in data.position_data %}
+                                    <tr>
+                                        <th>{{ data.skill_name }}</th>
+                                        <th>{{ data.notification_amount }}</th>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </main>
 {% endblock %}

@@ -16,25 +16,25 @@
             <div class="bar">
                 <h2 class="container-title">Средняя зарплата по годам</h2>
                 <div id="avg_salary">
-                    <img src="" width="640" alt="График зарплат"/>
+                    <img src="{{ demand_graph.salary_graph.url }}" width="640" alt="График зарплат"/>
                 </div>
             </div>
             <div class="bar">
                 <h2 class="container-title">Количество вакансий по годам</h2>
                 <div id="amount">
-                    <img src="" width="640" alt="График вакансий"/>
+                    <img src="{{ demand_graph.vacancies_graph.url }}" width="640" alt="График вакансий"/>
                 </div>
             </div>
             <div class="bar">
                 <h2 class="container-title">Средняя зарплата "{{ vacancy_name }}"</h2>
                 <div id="vacancy_avg_sal">
-                    <img src="" width="640" alt="График зарплат для должности"/>
+                    <img src="{{ demand_graph.position_salary_graph.url }}" width="640" alt="График зарплат для должности"/>
                 </div>
             </div>
             <div class="bar">
                 <h2 class="container-title">Количество вакансий "{{ vacancy_name }}"</h2>
                 <div id="vacancy_amount">
-                    <img src="" width="640" alt="График вакансий для должности"/>
+                    <img src="{{ demand_graph.position_vacancies_graph.url }}" width="640" alt="График вакансий для должности"/>
                 </div>
             </div>
         </div>
@@ -50,7 +50,13 @@
                     </tr>
                     </thead>
                     <tbody>
-
+                    {% for obj in position_data %}
+                        <tr>
+                            <th>{{ obj.year }}</th>
+                            <th>{{ obj.position_salary }}</th>
+                            <th>{{ obj.position_vacancies }}</th>
+                        </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -65,7 +71,13 @@
                     </tr>
                     </thead>
                     <tbody>
-
+                    {% for obj in all_vacancies_data %}
+                        <tr>
+                            <th>{{ obj.year }}</th>
+                            <th>{{ obj.average_salary }}</th>
+                            <th>{{ obj.vacancies_amount }}</th>
+                        </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>
